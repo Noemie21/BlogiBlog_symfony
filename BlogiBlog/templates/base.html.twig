@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog {% block title %}- Accueil{% endblock %}</title>
+        <style></style>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <ul>
+            <li> <a href="{{ path('default')}}">index</a></li>
+            <li> <a href="{{ path('article')}}">article</a></li>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li> <a href="{{ path('profil')}}">profil</a></li>
+            {% else %}
+                <li> <a href="{{ path('app_login')}}">login</a></li>
+            {% endif %}
+        </ul>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
