@@ -38,7 +38,7 @@ class BlogPost
     private $createdAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="blogPosts")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="blogPosts")
      */
     private $author;
 
